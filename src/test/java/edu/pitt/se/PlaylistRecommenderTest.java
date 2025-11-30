@@ -26,7 +26,10 @@ public class PlaylistRecommenderTest {
 
     @Test
     public void testClassifyEnergyEmptyList() {
-        assertThrows(IllegalArgumentException.class, () -> PlaylistRecommender.classifyEnergy(Collections.emptyList()), "For empty list it must throw exception");
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> PlaylistRecommender.classifyEnergy(Collections.emptyList())
+        );
     }
 
     @Test
