@@ -7,13 +7,19 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
 
+import static org.junit.jupiter.api.Assertions.*;
+
 public class PlaylistRecommenderTest {
 
-    public void testClassifyEnergyWithNullList() {
+    @Test
+    public void testClassifyEnergy_NullList_ThrowsException() {
+        List<Integer> bpms = null;
+        
         IllegalArgumentException exception = assertThrows(
             IllegalArgumentException.class,
-            () -> PlaylistRecommender.classifyEnergy(null)
+            () -> EnergyClassifier.classifyEnergy(bpms)
         );
+        
         assertEquals("BPM list cannot be null or empty", exception.getMessage());
     }
 
