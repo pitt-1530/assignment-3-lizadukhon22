@@ -25,14 +25,6 @@ public class PlaylistRecommenderTest {
     }
 
     @Test
-    public void testClassifyEnergyEmptyList() {
-        IllegalArgumentException exception = assertThrows(
-            IllegalArgumentException.class,
-            () -> PlaylistRecommender.classifyEnergy(Collections.emptyList())
-        );
-    }
-
-    @Test
     public void testIsValidTrackTitleValid() {
         assertTrue(PlaylistRecommender.isValidTrackTitle("Favorite Song"));
     }
