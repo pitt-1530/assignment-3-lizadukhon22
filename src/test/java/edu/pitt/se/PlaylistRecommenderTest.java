@@ -17,7 +17,7 @@ public class PlaylistRecommenderTest {
         
         IllegalArgumentException exception = assertThrows(
             IllegalArgumentException.class,
-            () -> EnergyClassifier.classifyEnergy(bpms)
+            () -> PlaylistRecommender.classifyEnergy(bpms)
         );
         
         assertEquals("BPM list cannot be null or empty", exception.getMessage());
