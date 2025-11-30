@@ -9,6 +9,14 @@ import org.junit.jupiter.api.Test;
 
 public class PlaylistRecommenderTest {
 
+    public void testClassifyEnergyWithNullList() {
+        IllegalArgumentException exception = assertThrows(
+            IllegalArgumentException.class,
+            () -> PlaylistRecommender.classifyEnergy(null)
+        );
+        assertEquals("BPM list cannot be null or empty", exception.getMessage());
+    }
+
     @Test
      public void testClassifyEnergyHigh() {
         assertEquals("HIGH", PlaylistRecommender.classifyEnergy(List.of(150, 145, 160)), "For values 150, 145, and 160, it must return HIGH");
