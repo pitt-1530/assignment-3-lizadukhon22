@@ -24,11 +24,6 @@ public class PlaylistRecommenderTest {
         assertEquals("LOW", PlaylistRecommender.classifyEnergy(List.of(80, 90, 70)), "For values 80, 90, and 70, it must return LOW");
     }
 
-    // @Test
-    // public void testClassifyEnergyEmptyList() {
-    //     assertThrows(IllegalArgumentException.class, () -> PlaylistRecommender.classifyEnergy(Collections.emptyList()), "For empty list it must throw exception");
-    // }
-
     @Test
     public void testIsValidTrackTitleValid() {
         assertTrue(PlaylistRecommender.isValidTrackTitle("Favorite Song"));
